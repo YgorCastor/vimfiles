@@ -1,6 +1,10 @@
 " .vimrc
 " Author: Jonathan Lima <greenboxal@gmail.com>
 " Source: http://github.com/greenboxal/vimfiles
+" 
+" .customized
+" Author: Ygor Castor <ygorcastor@gmail.com>
+" Source: http://github.com/ygorcastor/vimfiles
 
 " ##### Plug setup  {{{
 call plug#begin('~/.vim/plugged')
@@ -10,7 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'teranex/jk-jumps.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'milkypostman/vim-togglelist'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -32,15 +36,18 @@ Plug 'junegunn/goyo.vim'
 
 " Support
 Plug 'tpope/vim-dispatch'
-Plug 'embear/vim-localvimrc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Raimondi/delimitMate'
 Plug 'msanders/snipmate.vim'
-Plug 'tomtom/tcomment_vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/echodoc.vim'
+Plug 'thinca/vim-ref'
+Plug 'Keithbsmiley/investigate.vim'
+
 
 " Colorschemes
 Plug 'sjl/badwolf'
@@ -48,6 +55,7 @@ Plug 'dracula/vim'
 Plug 'tomasr/molokai'
 
 " Languages
+Plug 'klen/python-mode'
 Plug 'b4winckler/vim-objc'
 Plug 'rodjek/vim-puppet'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
@@ -65,7 +73,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
@@ -370,10 +378,6 @@ let g:NumberToggleTrigger="<leader>ll"
 "}}}
 " ##### togglelist {{{
 let g:toggle_list_copen_command="Copen"
-" }}}
-" ##### localvimrc {{{
-let g:localvimrc_whitelist=$HOME.'/src/github.com/pagarme/.*'
-let g:localvimrc_persistent=1
 " }}}
 " ##### editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
