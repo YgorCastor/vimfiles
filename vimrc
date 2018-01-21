@@ -47,7 +47,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'thinca/vim-ref'
 Plug 'Keithbsmiley/investigate.vim'
-
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 " Colorschemes
 Plug 'sjl/badwolf'
@@ -55,15 +55,12 @@ Plug 'dracula/vim'
 Plug 'tomasr/molokai'
 
 " Languages
-Plug 'klen/python-mode'
-Plug 'b4winckler/vim-objc'
 Plug 'rodjek/vim-puppet'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go'
 Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
 Plug 'gkz/vim-ls'
-Plug 'kchmck/vim-coffee-script'
 Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-packer'
 Plug 'hashivim/vim-consul'
@@ -86,6 +83,7 @@ Plug 'jtratner/vim-flavored-markdown'
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'PProvost/vim-ps1'
+Plug 'reasonml-editor/vim-reason-plus'
 
 " JS Beautify
 Plug 'michalliu/jsruntime.vim'
@@ -507,5 +505,14 @@ autocmd FileType terraform set expandtab
 " }}}
 " ##### Docker {{{
 autocmd BufRead,BufNewFile Rockerfile set filetype=dockerfile
+" }}}
+" ##### Reason/OCaml {{{
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+nnoremap <leader>red :call LanguageClient_textDocument_definition()<cr>
+nnoremap <leader>ref :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <leader>reh :call LanguageClient_textDocument_hover()<cr>
 " }}}
 " }}}
