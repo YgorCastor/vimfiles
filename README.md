@@ -71,21 +71,16 @@ Based on [Jonathan Lima's vimfiles](http://github.com/greenboxal/vimfiles).
 * [CSharp](https://github.com/OrangeT/vim-csharp)
 * [Handlebars](https://github.com/mustache/vim-mustache-handlebars)
 * [DockerFile](https://github.com/ekalinin/Dockerfile.vim)
-* [Pug](https://github.com/digitaltoad/vim-pug)
 * [Vim Elixir](https://github.com/elixir-lang/vim-elixir)
 * [Elixir](https://github.com/awetzel/elixir.nvim)
 * [Erlang Runtime](https://github.com/vim-erlang/vim-erlang-runtime)
 * [Erlang Compiler](https://github.com/vim-erlang/vim-erlang-compiler)
 * [Erlang OmniComplete](https://github.com/vim-erlang/vim-erlang-omnicomplete)
 * [Erlang Tags](https://github.com/vim-erlang/vim-erlang-tags)
-* [Monster](https://github.com/osyo-manga/vim-monster)
 * [Jedi](https://github.com/zchee/deoplete-jedi)
-* [Protobuf](https://github.com/uarun/vim-protobuf)
 * [Markdown](https://github.com/tpope/vim-markdown)
 * [Flavoured Markdown](https://github.com/jtratner/vim-flavored-markdown)
-* [Nginx](https://github.com/evanmiller/nginx-vim-syntax)
 * [TypeScript](https://github.com/leafgarland/typescript-vim)
-* [ps1](https://github.com/PProvost/vim-ps1)
 * [Reason](https://github.com/reasonml-editor/vim-reason-plus)
 
 ## OmniCompletion
@@ -99,43 +94,24 @@ Based on [Jonathan Lima's vimfiles](http://github.com/greenboxal/vimfiles).
 
 #### Installing (step by step)
 
-First, you need to install [Fira Code](https://github.com/tonsky/FiraCode) font for Powerline and common character ligatures.
-
-Go to your home directory:
-
-    cd ~
+First, you need to install [Jetbrains Mono Patched](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Regular/complete) font for Powerline and common character ligatures.
 
 Clone my vimfiles repo:
 
-
     git clone --recursive https://github.com/ygorcastor/vimfiles.git
 
-Rename the repo to .vim in your home directory:
+Link the files to neovim config folder:
 
-    mv vimfiles ~/.vim
+    ln -s vimfiles/ ~/.config/nvim 
 
-Link vimrc and gvimrc to your home directory:
+Open NeoVim:
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-
-
-Open Vim:
-
-	vim
-
-(if you use MacVim):
-
-	mvim
+	nvim
 
 Install bundles by typing
 
 	:PlugInstall
+    :UpdateRemotePlugins
 
-Execute plugin specific installation
-
-	cd ~/.vim
-	bash ./install.sh
-
-Restart vim and enjoy! :)
+Restart neovim and enjoy! :)
 

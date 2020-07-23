@@ -21,7 +21,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'sjl/vitality.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'metakirby5/codi.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mhinz/vim-startify'
@@ -33,6 +32,8 @@ Plug 'bfredl/nvim-miniyank'
 Plug 'tpope/vim-sleuth'
 Plug 'duggiefresh/vim-easydir'
 Plug 'junegunn/goyo.vim'
+Plug 'ryanoasis/vim-devicons'
+
 
 " Support
 Plug 'tpope/vim-dispatch'
@@ -53,9 +54,9 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
 Plug 'sjl/badwolf'
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 " Languages
-Plug 'rodjek/vim-puppet'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go'
 Plug 'dag/vim-fish'
@@ -65,25 +66,23 @@ Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-packer'
 Plug 'hashivim/vim-consul'
 Plug 'hashivim/vim-vaultproject'
-Plug 'OrangeT/vim-csharp'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'digitaltoad/vim-pug'
 Plug 'elixir-lang/vim-elixir'
 Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+Plug 'mattreduce/vim-mix'
+Plug 'mhinz/vim-mix-format'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-tags'
-Plug 'osyo-manga/vim-monster'
 Plug 'zchee/deoplete-jedi'
-Plug 'uarun/vim-protobuf'
 Plug 'tpope/vim-markdown'
 Plug 'jtratner/vim-flavored-markdown'
-Plug 'evanmiller/nginx-vim-syntax'
 Plug 'leafgarland/typescript-vim'
-Plug 'PProvost/vim-ps1'
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'udalov/kotlin-vim'
+Plug 'fwcd/kotlin-language-server'
 
 " JS Beautify
 Plug 'michalliu/jsruntime.vim'
@@ -183,7 +182,7 @@ set autoread
 syntax on
 
 " Sets the colorscheme for terminal sessions too.
-colorscheme dracula
+colorscheme gruvbox
 
 " Leader = ,
 let mapleader = ","
@@ -347,7 +346,7 @@ let NERDTreeMapActivateNode='<space>'
 " }}}
 " ##### Airline  {{{
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'minimalist'
 let g:airline_section_warning = ''
 let g:airline_inactive_collapse = 0
 let g:airline#extensions#default#section_truncate_width = {
